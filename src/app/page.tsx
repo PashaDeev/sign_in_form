@@ -1,4 +1,5 @@
 import styles from './page.module.css';
+import {FormInput} from '@/shared/formInput';
 
 export default function SignIn() {
     return (
@@ -6,9 +7,17 @@ export default function SignIn() {
             <form action="/">
                 <h1>Sign In</h1>
 
+                <FormInput
+                    title="Email Address:"
+                    type="email"
+                    name="email"
+                    id="email"
+                    required={true}
+                    autoFocus={true}
+                    placeholder="me@example.com"
+                />
                 <section>
                     <label>
-                        Email Address:
                         <input type="email" name="email" id="email" required autoFocus placeholder="me@example.com" />
                     </label>
                 </section>
