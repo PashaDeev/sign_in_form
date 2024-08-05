@@ -1,4 +1,9 @@
-import {InputHTMLAttributes} from 'react';
+'use client';
+
+import {InputHTMLAttributes, useCallback, useState} from 'react';
+import clsx from 'clsx';
+
+import {INPUT_TYPE, VISIBILIT_BUTTON_ARIA_LABEL} from './constants';
 
 import styles from './index.module.css';
 
@@ -7,6 +12,7 @@ type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {
     ariaErrorMessage: string;
     isError: boolean;
 };
+
 export const FormInput = ({
     title,
     name,
@@ -20,33 +26,38 @@ export const FormInput = ({
     className,
     ...rest
 }: FormInputProps) => {
+    const [currentInputType, setInputType] = useState(type);
+
+    const handleVisibilityClick = useCallback((oldType: FormInputProps['type']) => {
+        const typeToChange = oldType === INPUT_TYPE.PASSWORD ? INPUT_TYPE.TEXT : INPUT_TYPE.PASSWORD;
+        setInputType(typeToChange);
+    }, []);
+
     return (
-        <section className={className}>
-            <label>
-                <span className={styles.title}>{title}</span>
-                <div className={styles.inputContainer}>
-                    <input
-                        className={styles.input}
-                        type={type}
-                        name={name}
-                        id={id}
-                        required={required}
-                        autoFocus={autoFocus}
-                        placeholder={placeholder}
-                        aria-invalid={isError}
-                        aria-errormessage={ariaErrorMessage}
-                        {...rest}
+        <label className={clsx(styles.label, className)}>
+            <span className={styles.title}>{title}</span>
+            <div className={styles.inputContainer}>
+                <input
+                    className={styles.input}
+                    type={currentInputType}
+                    name={name}
+                    id={id}
+                    required={required}
+                    autoFocus={autoFocus}
+                    placeholder={placeholder}
+                    aria-invalid={isError}
+                    aria-errormessage={ariaErrorMessage}
+                    {...rest}
+                />
+                {type === 'password' && (
+                    <button
+                        className={styles.passwordVisibilityButton}
+                        type="button"
+                        onClick={() => handleVisibilityClick(currentInputType)}
+                        aria-label={VISIBILIT_BUTTON_ARIA_LABEL}
                     />
-                    {type === 'password' && (
-                        <button
-                            className={styles.passwordVisibilityButton}
-                            type="button"
-                            aria-label="Show password as plain text.
-                    Warning: this will display your password on the screen."
-                        />
-                    )}
-                </div>
-            </label>
-        </section>
+                )}
+            </div>
+        </label>
     );
 };

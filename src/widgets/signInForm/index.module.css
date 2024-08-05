@@ -9,9 +9,9 @@
 .title {
     font-size: var(--text-title-size);
     color: var(--text-primary-color);
-    margin-bottom: var(--gap-l);
+    margin-bottom: var(--gap-xl);
 }
 
 .input {
-    margin-bottom: var(--gap-m);
+    margin-bottom: var(--gap-l);
 }

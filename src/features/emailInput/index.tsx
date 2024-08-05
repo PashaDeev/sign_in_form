@@ -1,4 +1,5 @@
 import {FormInput} from '@/shared/formInput';
+import {INPUT_TYPE} from '@/shared/formInput/constants';
 
 const INVALID_ARIA_STATE = 'email error';
 
@@ -7,8 +8,8 @@ export const EmailInput = ({className}: {className?: string}) => {
     return (
         <FormInput
             className={className}
+            type={INPUT_TYPE.EMAIL}
             title="Email Address:"
-            type="email"
             name="email"
             id="email"
             required={true}

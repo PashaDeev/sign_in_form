@@ -1,4 +1,5 @@
 import {FormInput} from '@/shared/formInput';
+import {INPUT_TYPE} from '@/shared/formInput/constants';
 
 const DESCRIBEDBY_NAME = 'password-constraints';
 const INVALID_ARIA_STATE = 'password error';
@@ -6,11 +7,10 @@ const INVALID_ARIA_STATE = 'password error';
 // todo Седалть правильный тип для className
 export const PasswordInput = ({className}: {className?: string}) => {
     return (
-        <div>
+        <div className={className}>
             <FormInput
-                className={className}
+                type={INPUT_TYPE.PASSWORD}
                 title="Password:"
-                type="password"
                 name="password"
                 id="current-password"
                 autoComplete="current-password"
