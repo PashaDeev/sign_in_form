@@ -1,6 +1,7 @@
 import {FormInput} from '@/shared/formInput';
 
 const DESCRIBEDBY_NAME = 'password-constraints';
+const INVALID_ARIA_STATE = 'password error';
 
 export const PasswordInput = () => {
     return (
@@ -14,6 +15,8 @@ export const PasswordInput = () => {
                 required
                 aria-describedby={DESCRIBEDBY_NAME}
                 placeholder="••••••••••"
+                ariaErrorMessage={INVALID_ARIA_STATE}
+                isError={false}
             />
 
             <div id={DESCRIBEDBY_NAME}></div>

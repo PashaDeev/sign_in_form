@@ -1,5 +1,7 @@
 import {FormInput} from '@/shared/formInput';
 
+const INVALID_ARIA_STATE = 'email error';
+
 export const EmailInput = () => {
     return (
         <FormInput
@@ -10,6 +12,8 @@ export const EmailInput = () => {
             required={true}
             autoFocus={true}
             placeholder="me@example.com"
+            ariaErrorMessage={INVALID_ARIA_STATE}
+            isError={false}
         />
     );
 };

@@ -1,6 +1,10 @@
 import {InputHTMLAttributes} from 'react';
 
-type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {title: string};
+type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {
+    title: string;
+    ariaErrorMessage: string;
+    isError: boolean;
+};
 export const FormInput = ({
     title,
     name,
@@ -9,6 +13,8 @@ export const FormInput = ({
     autoFocus,
     placeholder,
     type = 'text',
+    ariaErrorMessage,
+    isError,
     ...rest
 }: FormInputProps) => {
     return (
@@ -22,6 +28,8 @@ export const FormInput = ({
                     required={required}
                     autoFocus={autoFocus}
                     placeholder={placeholder}
+                    aria-invalid={isError}
+                    aria-errormessage={ariaErrorMessage}
                     {...rest}
                 />
                 {type === 'password' && (
