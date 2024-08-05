@@ -1,0 +1,17 @@
+.signInForm {
+    padding: var(--gap-m);
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--form-bg-color);
+}
+
+.title {
+    font-size: var(--text-title-size);
+    color: var(--text-primary-color);
+    margin-bottom: var(--gap-l);
+}
+
+.input {
+    margin-bottom: var(--gap-m);
+}

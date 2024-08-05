@@ -3,10 +3,12 @@ import {FormInput} from '@/shared/formInput';
 const DESCRIBEDBY_NAME = 'password-constraints';
 const INVALID_ARIA_STATE = 'password error';
 
-export const PasswordInput = () => {
+// todo Седалть правильный тип для className
+export const PasswordInput = ({className}: {className?: string}) => {
     return (
         <div>
             <FormInput
+                className={className}
                 title="Password:"
                 type="password"
                 name="password"

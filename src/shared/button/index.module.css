@@ -1,0 +1,17 @@
+.button {
+    padding: var(--gap-m) 0;
+
+    color: var(--control-action-text-color);
+
+    background-color: var(--control-action-color);
+    border-color: var(--control-action-color);
+    border-radius: 16px;
+
+    box-shadow: none;
+
+    font-size: var(--text-size-l);
+}
+
+.button_maxWidth {
+    width: 100%;
+}

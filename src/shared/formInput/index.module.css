@@ -1,0 +1,38 @@
+.title {
+    display: block;
+    margin-bottom: var(--gap-s);
+
+    color: var(--text-primary-color);
+    font-size: var(--text-size);
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.input {
+    font-size: var(--text-size-l);
+    padding: var(--gap-m);
+    width: 100%;
+    border: 1px solid var(--main-border-color);
+    border-radius: 16px;
+}
+
+.passwordVisibilityButton {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+    right: var(--gap-m);
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background-image: url('/open_eye.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+
+    border: none;
+}

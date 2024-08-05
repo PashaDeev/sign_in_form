@@ -1,4 +1,18 @@
 :root {
+    --text-primary-color: #313131;
+    --main-border-color: #3d3b75;
+    --control-action-color: #5e48e5;
+    --form-bg-color: #f4f4f4;
+    --control-action-text-color: #ffffff;
+
+    --text-title-size: 40px;
+    --text-action-size: 35px;
+    --text-size: 14px;
+    --text-size-l: 16px;
+
+    --gap-s: 8px;
+    --gap-m: 16px;
+    --gap-l: 32px;
 }
 
 * {

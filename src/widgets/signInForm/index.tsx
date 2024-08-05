@@ -1,14 +1,17 @@
 import {EmailInput} from '@/features/emailInput';
 import {PasswordInput} from '@/features/passwordInput';
 
+import styles from './index.module.css';
+import {Button} from '@/shared/button';
+
 export const SignInForm = () => (
-    <form action="/">
-        <h1>Sign In</h1>
+    <form action="/" className={styles.signInForm}>
+        <h1 className={styles.title}>Sign In</h1>
 
-        <EmailInput />
+        <EmailInput className={styles.input} />
 
-        <PasswordInput />
+        <PasswordInput className={styles.input} />
 
-        <button type="submit">Sign in</button>
+        <Button maxWidth={true}>Sign In</Button>
     </form>
 );

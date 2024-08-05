@@ -2,9 +2,11 @@ import {FormInput} from '@/shared/formInput';
 
 const INVALID_ARIA_STATE = 'email error';
 
-export const EmailInput = () => {
+// todo Седалть правильный тип для className
+export const EmailInput = ({className}: {className?: string}) => {
     return (
         <FormInput
+            className={className}
             title="Email Address:"
             type="email"
             name="email"
