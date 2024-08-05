@@ -1,29 +1,13 @@
-import {FormInput} from '@/shared/formInput';
+import {EmailInput} from '@/features/emailInput';
+import {PasswordInput} from '@/features/passwordInput';
 
 export const SignInForm = () => (
     <form action="/">
         <h1>Sign In</h1>
 
-        <FormInput
-            title="Email Address:"
-            type="email"
-            name="email"
-            id="email"
-            required={true}
-            autoFocus={true}
-            placeholder="me@example.com"
-        />
+        <EmailInput />
 
-        <FormInput
-            title="Password:"
-            type="password"
-            name="password"
-            id="current-password"
-            autoComplete="current-password"
-            required
-            aria-describedby="password-constraints"
-            placeholder="••••••••••"
-        />
+        <PasswordInput />
 
         <button type="submit">Sign in</button>
     </form>

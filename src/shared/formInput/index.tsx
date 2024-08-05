@@ -34,8 +34,6 @@ export const FormInput = ({
                     </button>
                 )}
             </label>
-            {/* todo унести в фичу */}
-            <div id="password-constraints"></div>
         </section>
     );
 };
