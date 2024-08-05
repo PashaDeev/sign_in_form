@@ -1,14 +1,16 @@
-type FormInputProps = {
-    title: string;
-    name: string;
+import {InputHTMLAttributes} from 'react';
 
-    placeholder?: string;
-    autoFocus?: boolean;
-    required?: boolean;
-    id?: string;
-    type?: HTMLInputElement['type'];
-};
-export const FormInput = ({title, name, id, required, autoFocus, placeholder, type = 'text'}: FormInputProps) => {
+type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {title: string};
+export const FormInput = ({
+    title,
+    name,
+    id,
+    required,
+    autoFocus,
+    placeholder,
+    type = 'text',
+    ...rest
+}: FormInputProps) => {
     return (
         <section>
             <label>
@@ -20,8 +22,20 @@ export const FormInput = ({title, name, id, required, autoFocus, placeholder, ty
                     required={required}
                     autoFocus={autoFocus}
                     placeholder={placeholder}
+                    {...rest}
                 />
+                {type === 'password' && (
+                    <button
+                        type="button"
+                        aria-label="Show password as plain text.
+                    Warning: this will display your password on the screen."
+                    >
+                        Show password
+                    </button>
+                )}
             </label>
+            {/* todo унести в фичу */}
+            <div id="password-constraints"></div>
         </section>
     );
 };
