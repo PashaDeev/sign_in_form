@@ -21,7 +21,7 @@ export const PasswordInput = ({className}: {className?: string}) => {
                 isError={false}
             />
 
-            <div id={DESCRIBEDBY_NAME}></div>
+            <ul id={DESCRIBEDBY_NAME}></ul>
         </div>
     );
 };
