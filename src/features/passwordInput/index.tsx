@@ -4,8 +4,13 @@ import {INPUT_TYPE} from '@/shared/formInput/constants';
 const DESCRIBEDBY_NAME = 'password-constraints';
 const INVALID_ARIA_STATE = 'password error';
 
+type PasswordInputProps = {
+    className?: string;
+    validationErrors?: string[];
+};
+
 // todo Седалть правильный тип для className
-export const PasswordInput = ({className}: {className?: string}) => {
+export const PasswordInput = ({className, validationErrors = []}: PasswordInputProps) => {
     return (
         <div className={className}>
             <FormInput
@@ -21,7 +26,11 @@ export const PasswordInput = ({className}: {className?: string}) => {
                 isError={false}
             />
 
-            <ul id={DESCRIBEDBY_NAME}></ul>
+            <ul id={DESCRIBEDBY_NAME}>
+                {validationErrors.map(error => (
+                    <li key={error}>{error}</li>
+                ))}
+            </ul>
         </div>
     );
 };

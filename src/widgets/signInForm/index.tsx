@@ -1,17 +1,31 @@
+'use client';
+
+import {useFormState} from 'react-dom';
 import {EmailInput} from '@/features/emailInput';
 import {PasswordInput} from '@/features/passwordInput';
+
+import {submit, type SubmitResult} from '@/app/actions';
 
 import styles from './index.module.css';
 import {Button} from '@/shared/button';
 
-export const SignInForm = () => (
-    <form action="/" className={styles.signInForm}>
-        <h1 className={styles.title}>Sign In</h1>
+const INITAIL_STATE: SubmitResult = {
+    emailValidationErrors: [],
+    passwordWalidationErrors: [],
+};
 
-        <EmailInput className={styles.input} />
+export const SignInForm = () => {
+    const [state, formSubmitAction] = useFormState<typeof INITAIL_STATE, FormData>(submit, INITAIL_STATE);
 
-        <PasswordInput className={styles.input} />
+    return (
+        <form action={formSubmitAction} className={styles.signInForm}>
+            <h1 className={styles.title}>Sign In</h1>
 
-        <Button maxWidth={true}>Sign In</Button>
-    </form>
-);
+            <EmailInput className={styles.input} />
+
+            <PasswordInput validationErrors={state.passwordWalidationErrors} className={styles.input} />
+
+            <Button maxWidth={true}>Sign In</Button>
+        </form>
+    );
+};
