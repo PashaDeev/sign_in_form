@@ -1,17 +1,33 @@
 .content {
+    position: relative;
+
+    display: flex;
     width: 100vw;
     height: 100vh;
 
-    display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-@media only screen and (min-width: 768px) {
+.formWrapper {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
 }
 
 @media only screen and (min-width: 1024px) {
     .content {
         align-items: center;
+    }
+
+    .formWrapper {
+        padding: var(--gap-xl);
+        width: auto;
+        height: auto;
+        min-width: 500px;
+
+        background: var(--form-bg-color);
+        border-radius: 15px;
     }
 }

@@ -23,10 +23,6 @@
     border-radius: 16px;
 }
 
-/* .input:invalid {
-    border-color: var(--alert-text-color)
-} */
-
 .input_invalid {
     border-color: var(--alert-text-color);
 }
