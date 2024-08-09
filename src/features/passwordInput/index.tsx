@@ -14,7 +14,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
     return (
         <FormInput
             type={INPUT_TYPE.PASSWORD}
-            title="Password:"
+            title="Password"
             name="password"
             id="current-password"
             autoComplete="current-password"

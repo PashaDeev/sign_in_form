@@ -14,7 +14,7 @@ export const EmailInput = (props: EmailInputProps) => {
     return (
         <FormInput
             type={INPUT_TYPE.EMAIL}
-            title="Email Address:"
+            title="Email"
             name="email"
             id="email"
             required={true}
