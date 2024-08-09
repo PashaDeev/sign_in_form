@@ -18,7 +18,7 @@ export const EmailInput = (props: EmailInputProps) => {
             name="email"
             id="email"
             required={true}
-            placeholder="me@example.com"
+            placeholder="Enter your email"
             ariaErrorMessage={INVALID_ARIA_STATE}
             {...props}
         />

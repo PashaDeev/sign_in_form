@@ -18,8 +18,10 @@ export const SignInForm = () => {
     const [state, formSubmitAction] = useFormState<typeof INITAIL_STATE, FormData>(submit, INITAIL_STATE);
 
     return (
-        <form action={formSubmitAction} className={styles.signInForm}>
-            <h1 className={styles.title}>Sign In</h1>
+        <form action={formSubmitAction} className={styles.signInForm} aria-labelledby="firstHeader" name="userLogin">
+            <h1 id="firstHeader" className={styles.title}>
+                Sign In
+            </h1>
 
             <EmailInput className={styles.block} errorMessage={state.emailErrorMessage} autoFocus={true} />
 

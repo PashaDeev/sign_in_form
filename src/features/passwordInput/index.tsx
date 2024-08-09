@@ -20,7 +20,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
             autoComplete="current-password"
             required
             aria-describedby={DESCRIBEDBY_NAME}
-            placeholder="••••••••••"
+            placeholder="Enter your password"
             ariaErrorMessage={INVALID_ARIA_STATE}
             {...props}
         />
