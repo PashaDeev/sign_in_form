@@ -10,8 +10,8 @@ import styles from './index.module.css';
 import {Button} from '@/shared/button';
 
 const INITAIL_STATE: SubmitResult = {
-    emailValidationErrors: [],
-    passwordWalidationErrors: [],
+    emailErrorMessage: '',
+    passwordErrorMessage: '',
 };
 
 export const SignInForm = () => {
@@ -21,9 +21,9 @@ export const SignInForm = () => {
         <form action={formSubmitAction} className={styles.signInForm}>
             <h1 className={styles.title}>Sign In</h1>
 
-            <EmailInput className={styles.input} />
+            <EmailInput className={styles.input} errorMessage={state.emailErrorMessage} autoFocus={true} />
 
-            <PasswordInput validationErrors={state.passwordWalidationErrors} className={styles.input} />
+            <PasswordInput className={styles.input} errorMessage={state.passwordErrorMessage} />
 
             <Button type="submit" maxWidth={true}>
                 Sign In

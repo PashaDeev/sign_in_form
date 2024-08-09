@@ -2,11 +2,14 @@
     --text-primary-color: #313131;
     --main-border-color: #3d3b75;
     --control-action-color: #5e48e5;
+    --control-disabled-color: #a293fa;
     --form-bg-color: #f4f4f4;
     --control-action-text-color: #ffffff;
+    --alert-text-color: #b3261e;
 
     --text-title-size: 40px;
     --text-action-size: 35px;
+    --text-size-s: 12px;
     --text-size: 14px;
     --text-size-l: 16px;
 

@@ -6,33 +6,23 @@ const INVALID_ARIA_STATE = 'password error';
 
 type PasswordInputProps = {
     className?: string;
-    validationErrors?: string[];
+    errorMessage?: string;
     disabled?: boolean;
 };
 
-// todo Седалть правильный тип для className
-export const PasswordInput = ({className, disabled, validationErrors = []}: PasswordInputProps) => {
+export const PasswordInput = (props: PasswordInputProps) => {
     return (
-        <div className={className}>
-            <FormInput
-                type={INPUT_TYPE.PASSWORD}
-                title="Password:"
-                name="password"
-                id="current-password"
-                autoComplete="current-password"
-                required
-                aria-describedby={DESCRIBEDBY_NAME}
-                placeholder="••••••••••"
-                ariaErrorMessage={INVALID_ARIA_STATE}
-                isError={false}
-                disabled={disabled}
-            />
-
-            <ul id={DESCRIBEDBY_NAME}>
-                {validationErrors.map(error => (
-                    <li key={error}>{error}</li>
-                ))}
-            </ul>
-        </div>
+        <FormInput
+            type={INPUT_TYPE.PASSWORD}
+            title="Password:"
+            name="password"
+            id="current-password"
+            autoComplete="current-password"
+            required
+            aria-describedby={DESCRIBEDBY_NAME}
+            placeholder="••••••••••"
+            ariaErrorMessage={INVALID_ARIA_STATE}
+            {...props}
+        />
     );
 };

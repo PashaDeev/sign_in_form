@@ -11,7 +11,7 @@ import {useFormStatus} from 'react-dom';
 type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {
     title: string;
     ariaErrorMessage: string;
-    isError: boolean;
+    errorMessage?: string;
 };
 
 export const FormInput = ({
@@ -23,9 +23,10 @@ export const FormInput = ({
     placeholder,
     type = 'text',
     ariaErrorMessage,
-    isError,
     className,
     disabled,
+    errorMessage,
+    'aria-describedby': ariaDescribedBy,
     ...rest
 }: FormInputProps) => {
     const {pending} = useFormStatus();
@@ -41,16 +42,19 @@ export const FormInput = ({
             <span className={styles.title}>{title}</span>
             <div className={styles.inputContainer}>
                 <input
-                    className={styles.input}
+                    className={clsx(styles.input, {
+                        [styles['input_invalid']]: Boolean(errorMessage),
+                    })}
                     type={currentInputType}
                     name={name}
                     id={id}
                     required={required}
                     autoFocus={autoFocus}
                     placeholder={placeholder}
-                    aria-invalid={isError}
+                    aria-invalid={Boolean(errorMessage)}
                     aria-errormessage={ariaErrorMessage}
                     disabled={pending || disabled}
+                    aria-describedby={ariaDescribedBy}
                     {...rest}
                 />
                 {type === 'password' && (
@@ -63,6 +67,12 @@ export const FormInput = ({
                     />
                 )}
             </div>
+
+            {errorMessage && (
+                <div className={styles.errorMessage} id={ariaDescribedBy}>
+                    {errorMessage}
+                </div>
+            )}
         </label>
     );
 };

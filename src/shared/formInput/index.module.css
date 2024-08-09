@@ -23,6 +23,14 @@
     border-radius: 16px;
 }
 
+/* .input:invalid {
+    border-color: var(--alert-text-color)
+} */
+
+.input_invalid {
+    border-color: var(--alert-text-color);
+}
+
 .passwordVisibilityButton {
     position: absolute;
 
@@ -37,4 +45,27 @@
     background-size: contain;
 
     border: none;
+}
+
+.errorMessage {
+    position: relative;
+
+    padding-left: var(--gap-m);
+    padding-top: var(--gap-s);
+
+    font-size: var(--text-size-s);
+    color: var(--alert-text-color);
+}
+
+.errorMessage::before {
+    content: '';
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+    width: 10px;
+    height: 10px;
+
+    background: var(--alert-text-color);
+    border-radius: 50%;
 }
