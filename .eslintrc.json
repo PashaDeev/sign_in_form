@@ -50,7 +50,8 @@
     "react/prop-types": "off",
     "prettier/prettier": "warn",
     "jsx-quotes": ["error", "prefer-double"],
-    "react/jsx-curly-brace-presence": "warn"
+    "react/jsx-curly-brace-presence": "warn",
+    "no-console": "error"
   },
   "settings": {
     "react": {
