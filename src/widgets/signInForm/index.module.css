@@ -12,6 +12,19 @@
     margin-bottom: var(--gap-xl);
 }
 
-.input {
+.block {
     margin-bottom: var(--gap-l);
+}
+
+.restoreContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+
+    font-size: var(--text-size);
+}
+
+.restoreLink {
+    text-decoration: none;
 }

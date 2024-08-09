@@ -21,13 +21,22 @@ export const SignInForm = () => {
         <form action={formSubmitAction} className={styles.signInForm}>
             <h1 className={styles.title}>Sign In</h1>
 
-            <EmailInput className={styles.input} errorMessage={state.emailErrorMessage} autoFocus={true} />
+            <EmailInput className={styles.block} errorMessage={state.emailErrorMessage} autoFocus={true} />
 
-            <PasswordInput className={styles.input} errorMessage={state.passwordErrorMessage} />
+            <PasswordInput className={styles.block} errorMessage={state.passwordErrorMessage} />
 
-            <Button type="submit" maxWidth={true}>
+            <Button type="submit" maxWidth={true} className={styles.block}>
                 Sign In
             </Button>
+
+            <div className={styles.restoreContainer}>
+                <span>
+                    Forgot your password?{' '}
+                    <a className={styles.restoreLink} href="#">
+                        Reset password
+                    </a>
+                </span>
+            </div>
         </form>
     );
 };
