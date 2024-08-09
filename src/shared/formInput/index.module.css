@@ -47,6 +47,10 @@
     border: none;
 }
 
+.passwordVisibilityButton_closed {
+    background-image: url('/closed_eye.svg');
+}
+
 .errorMessage {
     position: relative;
 

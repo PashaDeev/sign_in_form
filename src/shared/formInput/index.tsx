@@ -59,7 +59,9 @@ export const FormInput = ({
                 />
                 {type === 'password' && (
                     <button
-                        className={styles.passwordVisibilityButton}
+                        className={clsx(styles.passwordVisibilityButton, {
+                            [styles['passwordVisibilityButton_closed']]: currentInputType === INPUT_TYPE.TEXT,
+                        })}
                         type="button"
                         onClick={() => handleVisibilityClick(currentInputType)}
                         aria-label={VISIBILIT_BUTTON_ARIA_LABEL}
