@@ -1,18 +1,13 @@
 'use client';
 
-import {InputHTMLAttributes, useCallback, useState} from 'react';
+import {useFormStatus} from 'react-dom';
 import clsx from 'clsx';
 
 import {INPUT_TYPE, VISIBILIT_BUTTON_ARIA_LABEL} from './constants';
 
 import styles from './index.module.css';
-import {useFormStatus} from 'react-dom';
-
-type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {
-    title: string;
-    ariaErrorMessage: string;
-    errorMessage?: string;
-};
+import {FormInputProps} from './types';
+import {usePasswordVisibility} from './hooks/usePasswordVisibility';
 
 export const FormInput = ({
     title,
@@ -29,13 +24,8 @@ export const FormInput = ({
     'aria-describedby': ariaDescribedBy,
     ...rest
 }: FormInputProps) => {
+    const [currentInputType, handleVisibilityClick] = usePasswordVisibility(type);
     const {pending} = useFormStatus();
-    const [currentInputType, setInputType] = useState(type);
-
-    const handleVisibilityClick = useCallback((oldType: FormInputProps['type']) => {
-        const typeToChange = oldType === INPUT_TYPE.PASSWORD ? INPUT_TYPE.TEXT : INPUT_TYPE.PASSWORD;
-        setInputType(typeToChange);
-    }, []);
 
     return (
         <label className={clsx(styles.label, className)}>
