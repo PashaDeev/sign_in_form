@@ -3,8 +3,13 @@ import {INPUT_TYPE} from '@/shared/formInput/constants';
 
 const INVALID_ARIA_STATE = 'email error';
 
+type EmailInputProps = {
+    className?: string;
+    disabled?: boolean;
+};
+
 // todo Седалть правильный тип для className
-export const EmailInput = ({className}: {className?: string}) => {
+export const EmailInput = ({className, disabled}: EmailInputProps) => {
     return (
         <FormInput
             className={className}
@@ -17,6 +22,7 @@ export const EmailInput = ({className}: {className?: string}) => {
             placeholder="me@example.com"
             ariaErrorMessage={INVALID_ARIA_STATE}
             isError={false}
+            disabled={disabled}
         />
     );
 };

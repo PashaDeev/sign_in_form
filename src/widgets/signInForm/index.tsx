@@ -25,7 +25,9 @@ export const SignInForm = () => {
 
             <PasswordInput validationErrors={state.passwordWalidationErrors} className={styles.input} />
 
-            <Button maxWidth={true}>Sign In</Button>
+            <Button type="submit" maxWidth={true}>
+                Sign In
+            </Button>
         </form>
     );
 };

@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import {INPUT_TYPE, VISIBILIT_BUTTON_ARIA_LABEL} from './constants';
 
 import styles from './index.module.css';
+import {useFormStatus} from 'react-dom';
 
 type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {
     title: string;
@@ -24,8 +25,10 @@ export const FormInput = ({
     ariaErrorMessage,
     isError,
     className,
+    disabled,
     ...rest
 }: FormInputProps) => {
+    const {pending} = useFormStatus();
     const [currentInputType, setInputType] = useState(type);
 
     const handleVisibilityClick = useCallback((oldType: FormInputProps['type']) => {
@@ -47,6 +50,7 @@ export const FormInput = ({
                     placeholder={placeholder}
                     aria-invalid={isError}
                     aria-errormessage={ariaErrorMessage}
+                    disabled={pending || disabled}
                     {...rest}
                 />
                 {type === 'password' && (
@@ -55,6 +59,7 @@ export const FormInput = ({
                         type="button"
                         onClick={() => handleVisibilityClick(currentInputType)}
                         aria-label={VISIBILIT_BUTTON_ARIA_LABEL}
+                        disabled={pending || disabled}
                     />
                 )}
             </div>

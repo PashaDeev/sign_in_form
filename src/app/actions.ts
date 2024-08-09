@@ -8,6 +8,9 @@ export type SubmitParams = {
 
 export async function submit(_: SubmitResult, param: FormData): Promise<SubmitResult> {
     console.log('param', param);
+    console.log('prevState', _);
+
+    await new Promise(res => setTimeout(res, 2000));
     return {
         emailValidationErrors: [],
         passwordWalidationErrors: ['To short', 'Non char'],
