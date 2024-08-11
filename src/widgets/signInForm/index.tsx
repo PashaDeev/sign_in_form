@@ -1,24 +1,25 @@
 'use client';
 
-import {useFormState} from 'react-dom';
+// import {useFormState} from 'react-dom';
 import {EmailInput} from '@/features/emailInput';
 import {PasswordInput} from '@/features/passwordInput';
 
-import {submit, type SubmitResult} from '@/app/actions';
+// import {submit, type SubmitResult} from '@/app/actions';
 
 import styles from './index.module.css';
 import {Button} from '@/shared/button';
 
-const INITAIL_STATE: SubmitResult = {
+const INITAIL_STATE = {
     emailErrorMessage: '',
     passwordErrorMessage: '',
 };
 
 export const SignInForm = () => {
-    const [state, formSubmitAction] = useFormState<typeof INITAIL_STATE, FormData>(submit, INITAIL_STATE);
+    // const [state, formSubmitAction] = useFormState<typeof INITAIL_STATE, FormData>(submit, INITAIL_STATE);
+    const state = INITAIL_STATE;
 
     return (
-        <form action={formSubmitAction} className={styles.signInForm} aria-labelledby="firstHeader" name="userLogin">
+        <form action="/" className={styles.signInForm} aria-labelledby="firstHeader" name="userLogin">
             <h1 id="firstHeader" className={styles.title}>
                 Sign In
             </h1>
