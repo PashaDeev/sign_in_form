@@ -37,14 +37,14 @@
 
     transform: translateY(-50%);
 
-    background: url('/open_eye.svg') no-repeat center white;
+    background: url('/sign_in_form/open_eye.svg') no-repeat center white;
     background-size: contain;
 
     border: none;
 }
 
 .passwordVisibilityButton_closed {
-    background-image: url('/closed_eye.svg');
+    background-image: url('/sign_in_form/closed_eye.svg');
 }
 
 .errorMessage {

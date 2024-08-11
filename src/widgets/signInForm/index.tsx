@@ -19,7 +19,7 @@ export const SignInForm = () => {
     const state = INITAIL_STATE;
 
     return (
-        <form action="/" className={styles.signInForm} aria-labelledby="firstHeader" name="userLogin">
+        <form action="/sign_in_form" className={styles.signInForm} aria-labelledby="firstHeader" name="userLogin">
             <h1 id="firstHeader" className={styles.title}>
                 Sign In
             </h1>
