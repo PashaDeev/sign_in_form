@@ -3,11 +3,10 @@
 import {useFormStatus} from 'react-dom';
 import clsx from 'clsx';
 
-import {INPUT_TYPE, VISIBILIT_BUTTON_ARIA_LABEL} from './constants';
-
-import styles from './index.module.css';
-import {FormInputProps} from './types';
 import {usePasswordVisibility} from './hooks/usePasswordVisibility';
+import {INPUT_TYPE, VISIBILIT_BUTTON_ARIA_LABEL} from './constants';
+import {FormInputProps} from './types';
+import styles from './index.module.css';
 
 export const FormInput = ({
     title,

@@ -7,7 +7,7 @@
     margin-bottom: var(--gap-s);
 
     color: var(--text-primary-color);
-    font-size: var(--text-size);
+    font-size: var(--text-size-m);
 }
 
 .inputContainer {
@@ -24,7 +24,7 @@
 }
 
 .input_invalid {
-    border-color: var(--alert-text-color);
+    border-color: var(--text-alert-color);
 }
 
 .passwordVisibilityButton {
@@ -54,7 +54,7 @@
     padding-top: var(--gap-s);
 
     font-size: var(--text-size-s);
-    color: var(--alert-text-color);
+    color: var(--text-alert-color);
 }
 
 .errorMessage::before {
@@ -66,6 +66,6 @@
     width: 10px;
     height: 10px;
 
-    background: var(--alert-text-color);
+    background: var(--text-alert-color);
     border-radius: 50%;
 }
